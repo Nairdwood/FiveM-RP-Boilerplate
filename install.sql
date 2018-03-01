@@ -58,18 +58,18 @@ CREATE TABLE `coordinates` (
 --
 
 INSERT INTO `coordinates` (`id`, `x`, `y`, `z`, `name`) VALUES
-(1, 2681.752, 2800.187, 40.36, 'Mines du vieux Los Santos'),
-(2, 1077.64, -1989.417, 30.883, 'Fonte des métaux'),
-(3, -510.449, -2751.847, 6.2, 'Vente du fer'),
-(7, -801.323, 5403.05, 34.0766, 'Récolte bois'),
-(8, -555.881, 5319.96, 73.5997, 'Traitement bois'),
-(9, -473.829, -985.232, 23.5457, 'Vente du bois'),
-(10, -1813.25, 2105.58, 135.808, 'Vignobles'),
-(11, 823.7, 2193.76, 52.0271, 'Atelier du vin'),
-(12, -561.508, 302.273, 82.6591, 'Vente du vin'),
-(13, 2217.01, 5577.23, 53.8241, 'Récolte weed'),
-(14, -1674.55, -1069.29, 13.1529, 'Traitement weed'),
-(15, 485.292, -3382.2, 6.06991, 'Vente weed');
+(1, 2681.752, 2800.187, 40.36, 'Old Los Santos Mines'),
+(2, 1077.64, -1989.417, 30.883, 'Metal Forge'),
+(3, -510.449, -2751.847, 6.2, 'Iron Merchant'),
+(7, -801.323, 5403.05, 34.0766, 'Lumber Farm'),
+(8, -555.881, 5319.96, 73.5997, 'Lumber Treatment'),
+(9, -473.829, -985.232, 23.5457, 'Lumber Yard'),
+(10, -1813.25, 2105.58, 135.808, 'Vineyards'),
+(11, 823.7, 2193.76, 52.0271, 'Wine Brewery'),
+(12, -561.508, 302.273, 82.6591, 'Wine Merchant'),
+(13, 2217.01, 5577.23, 53.8241, 'Canabis Farm'),
+(14, -1674.55, -1069.29, 13.1529, 'Canabis Treatment'),
+(15, 485.292, -3382.2, 6.06991, 'Canabis Merchant');
 
 -- --------------------------------------------------------
 
@@ -93,17 +93,17 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `libelle`, `isIllegal`, `food`, `water`, `needs`, `limitation`, `type`) VALUES
-(1, 'Pierre', 0, '0', '0', '0', NULL, 'object'),
-(3, 'Minerais de fer', 0, '0', '0', '0', NULL, 'object'),
-(6, 'Fer', 0, '0', '0', '0', NULL, 'object'),
-(7, 'Diamant', 0, '0', '0', '0', NULL, 'object'),
+(1, 'Paul', 0, '0', '0', '0', NULL, 'object'),
+(3, 'Iron Ore', 0, '0', '0', '0', NULL, 'object'),
+(6, 'Iron', 0, '0', '0', '0', NULL, 'object'),
+(7, 'Diamond', 0, '0', '0', '0', NULL, 'object'),
 (30, 'Burger', 0, '30', '0', '0', NULL, 'food'),
-(31, 'Coca-Cola', 0, '5', '20', '0', NULL, 'drink'),
-(32, 'Morceaux de bois', 0, '0', '0', '0', 15, 'object'),
-(33, 'Planches', 0, '0', '0', '0', 15, 'object'),
+(31, 'Cola', 0, '5', '20', '0', NULL, 'drink'),
+(32, 'Lumber', 0, '0', '0', '0', 15, 'object'),
+(33, 'Wooden Planks', 0, '0', '0', '0', 15, 'object'),
 (34, 'Raisins', 0, '5', '5', '0', 15, 'food'),
-(36, 'Vin en cubi', 0, '0', '0', '0', 15, 'object'),
-(37, 'Feuilles de chanvre', 1, '0', '0', '0', 15, 'object'),
+(36, 'Glass of Wine', 0, '0', '0', '0', 15, 'object'),
+(37, 'Hemp leaves', 1, '0', '0', '0', 15, 'object'),
 (38, 'Marijuana', 1, '0', '0', '0', 15, 'object');
 
 -- --------------------------------------------------------
@@ -124,30 +124,31 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`job_id`, `job_name`, `salary`, `whitelisted`) VALUES
-(1, 'Chômeur', 200, 0),
+(1, 'Unemployed', 200, 0),
 (2, 'LSPD (Cadet)', 450, 1),
-(3, 'LSPD (Officier)', 750, 1),
+(3, 'LSPD (Officer)', 750, 1),
 (4, 'LSPD (Sergent)', 1000, 1),
-(5, 'LSPD (Commandant)', 1600, 1),
-(6, 'CHU (Interne)', 400, 1),
-(7, 'CHU (Médecin)', 850, 1),
-(8, 'CHU (Chef de service)', 900, 1),
-(9, 'CHU (Directeur)', 2700, 1),
-(10, 'GSPR 1', 2200, 1),
-(11, 'GSPR 2', 3200, 1),
-(12, 'GSPR 3', 4800, 1),
-(13, 'Gouverneur', 5000, 1),
-(14, 'Ministre de l\'Économie', 3000, 1),
-(15, 'Ministre de l\'Intérieur', 3000, 1),
-(16, 'Ministre de la Communication', 3000, 1),
-(17, 'Bûcheron', 90, 0),
-(18, 'Viticulteur', 75, 0),
-(19, 'Mineur', 75, 0),
-(20, 'Illegal', 0, 0),
-(21, 'Livreur', 75, 0),
-(22, 'Taxi', 90, 0),
-(23, 'Juge', 1300, 1),
-(24, 'Avocat', 1000, 1);
+(5, 'LSPD (Commander)', 1600, 1),
+(6, 'LSPD (Chief)', 2500, 1),
+(7, 'EMS (Trainee)', 400, 1),
+(8, 'EMS (Medic)', 850, 1),
+(9, 'EMS (Commander)', 900, 1),
+(10, 'EMS (Director)', 2700, 1),
+(11, 'SS I', 2200, 1),
+(12, 'SS II', 3200, 1),
+(13, 'SS III', 4800, 1),
+(14, 'Govenor', 5000, 1),
+(15, 'Economic Minister', 3000, 1),
+(16, 'Internal Affairs Minister', 3000, 1),
+(17, 'Communications Minister', 3000, 1),
+(18, 'Lumberjack', 90, 0),
+(19, 'Winegrower', 75, 0),
+(20, 'Miner', 75, 0),
+(21, 'Illegal', 0, 0),
+(22, 'Delivery Driver', 75, 0),
+(23, 'Taxi', 90, 0),
+(24, 'Judge', 1300, 1),
+(25, 'Lawyer', 1000, 1);
 
 -- --------------------------------------------------------
 
@@ -166,8 +167,8 @@ CREATE TABLE `licences` (
 --
 
 INSERT INTO `licences` (`id`, `name`, `price`) VALUES
-(1, 'De conduire', 1000),
-(2, 'De port d\'arme', 5000);
+(1, 'Driving', 1000),
+(2, 'Weapon', 5000);
 
 
 
@@ -195,10 +196,10 @@ CREATE TABLE `recolt` (
 --
 
 INSERT INTO `recolt` (`ID`, `raw_id`, `treated_id`, `job_id`, `price`, `field_id`, `treatment_id`, `seller_id`, `nom`, `isIllegal`) VALUES
-(4, 1, 3, 19, 40, 1, 2, 3, 'Mineur', 0),
-(5, 32, 33, 17, 55, 7, 8, 9, 'Bucheron', 0),
-(6, 34, 36, 18, 40, 10, 11, 12, 'Viticulteur', 0),
-(7, 37, 38, 1, 95, 13, 14, 15, 'Weed', 1);
+(4, 1, 3, 19, 40, 1, 2, 3, 'Miner', 0),
+(5, 32, 33, 17, 55, 7, 8, 9, 'Lumberjack', 0),
+(6, 34, 36, 18, 40, 10, 11, 12, 'Winegrower', 0),
+(7, 37, 38, 1, 95, 13, 14, 15, 'Canabis Farmer', 1);
 
 -- --------------------------------------------------------
 
@@ -218,7 +219,7 @@ CREATE TABLE `users` (
   `job` int(11) DEFAULT '1',
   `lastpos` varchar(255) DEFAULT '{241.609985351563, -877.769958496094,  30.4920997619629, 0}',
   `personalvehicle` varchar(255) DEFAULT NULL,
-  `name` varchar(255) NOT NULL DEFAULT 'github.com/xchopin',
+  `name` varchar(255) NOT NULL DEFAULT 'New Character',
   `isFirstConnection` int(11) DEFAULT '1',
   `food` double NOT NULL DEFAULT '100',
   `water` double NOT NULL DEFAULT '100',
